@@ -109,7 +109,7 @@ fun payBill(){
                 Cons.OFICIAL->{
                     timeTotal = data[0]!!.time_total!!
                     textTime.postValue(timeTotal.toString())
-                    bill = data[0]!!.time_total!! * Cons.BILL_OFICIAL
+                      bill = data[0]!!.time_total!! * Cons.BILL_OFICIAL
                     textBill.postValue(bill.ConvertAmount())
                 }
                 Cons.NO_RESIDENTE ->{
@@ -139,6 +139,6 @@ fun payBill(){
             textError.postValue(App.context.getString(R.string.text_error_plate))
         }
     }
-    
+
 
 }

@@ -74,6 +74,7 @@ class CheckOutViewModel(private val repository: DataRepository) : ViewModel() {
             val dtaVehicle = DtaVehicleEntity()
             dtaVehicle.idCar = data[0]!!.idCar
             dtaVehicle.user = data[0]!!.user
+            dtaVehicle.time_start = data[0]!!.time_start
             dtaVehicle.time_end = System.currentTimeMillis()
             try {
                 repository.createData(dtaVehicle)
