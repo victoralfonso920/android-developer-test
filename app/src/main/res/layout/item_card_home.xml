@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="menu"
+            type="com.prueba.hugo.model.Option" />
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout
+
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+   >
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view_services"
+        android:layout_width="@dimen/_120sdp"
+        android:layout_height="@dimen/_120sdp"
+        app:cardCornerRadius="@dimen/_10sdp"
+        app:cardElevation="@dimen/_2sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        app:cardPreventCornerOverlap="false"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+            android:orientation="vertical">
+            <ImageView
+                image_local="@{menu.img, default=@drawable/front_car}"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:paddingEnd="@dimen/_55sdp"
+                android:scaleType="centerCrop"
+                tools:srcCompat="@drawable/front_car" />
+
+            <TextView
+                android:id="@+id/txtCategory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@{menu.name}"
+                android:gravity="center"
+                tools:text="fsdfsdfsdfs"
+                android:textColor="@color/colorMetalBlack"
+                android:textSize="@dimen/_11sdp"
+                app:layout_constraintEnd_toEndOf="@+id/card_view_services"
+                app:layout_constraintStart_toStartOf="@+id/card_view_services"
+                app:layout_constraintTop_toBottomOf="@+id/card_view_services" />
+        </LinearLayout>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

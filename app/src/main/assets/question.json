@@ -1,0 +1,17 @@
+{
+  "options":
+  [
+    {
+      "id": "op01",
+      "name": "Oficial"
+    },
+    {
+      "id": "op02",
+      "name": "Residente"
+    },
+    {
+      "id": "op03",
+      "name": "No residente"
+    }
+  ]
+}

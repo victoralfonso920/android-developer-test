@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+                name="option"
+                type="com.prueba.hugo.model.Option" />
+    </data>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="wrap_content"
+        android:gravity="center"
+            >
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnOptions"
+            style="@style/DefaultButtonPrimary"
+            android:backgroundTint="@color/colorMetalBlack"
+            android:textColor="@color/colorWhite"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/height_buttom_options"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto_bold"
+            android:padding="@dimen/_3sdp"
+            android:text="@{option.name}"
+            tools:text="residente"
+            android:textAllCaps="false"
+            android:textSize="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            />
+    </LinearLayout>
+</layout>

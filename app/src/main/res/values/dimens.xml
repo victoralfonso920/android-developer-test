@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="height_buttom">@dimen/_55sdp</dimen>
+    <dimen name="height_buttom_options">@dimen/_30sdp</dimen>
+    <dimen name="height_buttom_dialog">@dimen/_45sdp</dimen>
+    <dimen name="text_size_my_profile_data">@dimen/_11sdp</dimen>
+</resources>

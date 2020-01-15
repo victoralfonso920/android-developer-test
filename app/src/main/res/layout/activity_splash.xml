@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="splash_vm"
+            type="com.prueba.hugo.views.init.SplashViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".views.init.SplashActivity">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/parking" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorBlackTrans"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/nova_semibold"
+            android:text="@string/splash_title"
+            android:textColor="@color/colorYellow"
+            android:textSize="@dimen/_25sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:fontFamily="@font/roboto_light"
+            android:gravity="center"
+            android:shadowColor="@color/colorYellow"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="2"
+            android:text="@string/text_message_splash"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/_25sdp"
+            app:layout_constraintBottom_toTopOf="@+id/btnEnterLogin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnEnterLogin"
+            style="@style/DefaultButtonPrimary"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/height_buttom"
+            android:layout_marginStart="@dimen/_35sdp"
+            android:layout_marginEnd="@dimen/_35sdp"
+            android:layout_marginBottom="32dp"
+            android:fontFamily="@font/roboto_bold"
+            android:padding="@dimen/_2sdp"
+            android:text="@string/text_continue"
+            android:textAllCaps="false"
+            android:onClick="@{()-> splash_vm.onclickSplash()}"
+            android:textSize="@dimen/_15sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.44" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

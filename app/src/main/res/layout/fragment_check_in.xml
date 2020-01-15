@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="chkin_vm"
+            type="com.prueba.hugo.views.home.check_in.CheckInViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/masterLossPass"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.08" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/colorYellow"
+            app:layout_constraintBottom_toTopOf="@+id/guideline3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                tools:src="@drawable/front_car"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+                <ImageView
+                    image_local="@{chkin_vm.imageRes, default=@drawable/car_perfil}"
+                    android:layout_width="@dimen/_200sdp"
+                    android:layout_height="@dimen/_200sdp"
+                    android:scaleType="centerCrop"
+                    tools:src="@drawable/car_perfil"
+                    android:adjustViewBounds="true"
+                    android:paddingStart="@dimen/_100sdp"
+                   />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:fontFamily="@font/roboto_light"
+                android:text="@string/text_number_id"
+                android:textColor="@color/colorMetalBlack"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintBottom_toTopOf="@+id/txtIdCar"
+                app:layout_constraintStart_toStartOf="parent"
+                 />
+            <TextView
+                android:id="@+id/txtIdCar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:fontFamily="@font/nova_semibold"
+                android:textColor="@color/colorMetalBlack"
+                android:textSize="@dimen/_25sdp"
+                android:text="@={chkin_vm.textIdCar}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="1234-5678" />
+
+            <TextView
+                android:id="@+id/txtTme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:textColor="@color/colorMetalBlack"
+                android:textSize="@dimen/_12sdp"
+                android:text="@={chkin_vm.textTime}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                 />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/colorMetalBlack"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline3">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/roboto_light"
+                android:text="@string/text_options_user"
+                android:visibility="@{chkin_vm.showRegister ? View.VISIBLE : View.GONE}"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcOptions"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginTop="8dp"
+                android:paddingStart="@dimen/_10sdp"
+                app:barrierMargin="@dimen/_5sdp"
+                android:visibility="@{chkin_vm.showRegister ? View.VISIBLE : View.GONE}"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView3"
+                tools:listitem="@layout/item_recycler_home" />
+
+            <EditText
+                android:id="@+id/etIdCar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:fontFamily="@font/nova_semibold"
+                android:hint="Ingrese el número de la placa"
+                android:paddingBottom="@dimen/_15sdp"
+                android:text="@={chkin_vm.textIdCar}"
+                android:textColor="@color/colorWhite"
+                android:imeOptions="actionDone"
+                android:textColorHint="@color/colorWhite"
+                android:textSize="@dimen/_15sdp"
+                app:layout_constraintBottom_toTopOf="@+id/constraintLayout4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rcOptions" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/DefaultButtonPrimary"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/height_buttom"
+                    android:layout_marginStart="@dimen/_35sdp"
+                    android:layout_marginEnd="@dimen/_35sdp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:onClick="@{()-> chkin_vm.registerUser()}"
+                    android:padding="@dimen/_2sdp"
+                    android:text="@string/text_register_user"
+                    android:textAllCaps="false"
+                    android:textSize="@dimen/_15sdp"
+                    android:visibility="@{chkin_vm.showRegister ? View.VISIBLE : View.GONE}"
+                    app:layout_constraintBottom_toTopOf="@+id/btnActiveParking"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnActiveParking"
+                    style="@style/DefaultButtonPrimary"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/height_buttom"
+                    android:layout_marginStart="@dimen/_35sdp"
+                    android:layout_marginEnd="@dimen/_35sdp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:onClick="@{()-> chkin_vm.activeParking()}"
+                    android:padding="@dimen/_2sdp"
+                    android:text="@string/text_enter_car"
+                    android:textAllCaps="false"
+                    android:textSize="@dimen/_15sdp"
+                    android:visibility="@{chkin_vm.showRegister ? View.GONE : View.VISIBLE}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:scaleType="centerInside"
+            android:onClick="@{()-> chkin_vm.Gotoback()}"
+            app:layout_constraintBottom_toTopOf="@+id/guideline2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline2"
+            app:srcCompat="@drawable/ic_arrow_back" />
+
+        <TextClock
+            android:id="@+id/txtClock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="40dp"
+            android:fontFamily="@font/nova_semibold"
+            android:format12Hour="hh:mm:ss a"
+            android:textColor="@color/colorMetalBlack"
+            android:textSize="@dimen/_25sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline2"
+            tools:text="10:00" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.45" />
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

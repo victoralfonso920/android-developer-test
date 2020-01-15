@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Mi Parqueo</string>
+    <!--
+   splash
+   -->
+    <string name="splash_title">Mi\nParqueo App Test</string>
+    <string name="text_welcome_message">¡Bienvenido!</string>
+    <string name="text_continue">Continuar</string>
+    <string name="text_enter_car">Registrar entrada</string>
+    <string name="text_exit_car">Registrar salida</string>
+    <string name="text_pay_bill">Pagar cuenta</string>
+    <string name="text_message_splash">Control y pago \nde parqueo</string>
+    <string name="text_error_required">Campo requerido</string>
+    <string name="text_error_plate">Debe de ingresar el número de placa</string>
+    <string name="text_number_id">Número de placa</string>
+    <string name="text_time_in_parking">Tiempo en parqueo</string>
+    <string name="text_options_user">Opciones de usuario</string>
+    <string name="text_register_user">Registrar usuario</string>
+    <string name="text_search_car">Buscar por placa</string>
+    <string name="text_error_result">aún no se han registrado vehiculos</string>
+    <string name="text_time_table">Tiempo/min</string>
+    <string name="text_num_place">Núm. placa</string>
+    <string name="text_cant_bill">Cant. pagar</string>
+
+</resources>

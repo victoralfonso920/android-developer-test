@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="pay_vm"
+            type="com.prueba.hugo.views.home.pay_bill.PayBillViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/masterLossPass"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.08" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/colorMetalBlack"
+            app:layout_constraintBottom_toTopOf="@+id/guideline3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <LinearLayout
+                android:layout_width="@dimen/_250sdp"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                android:paddingTop="@dimen/_15sdp"
+                android:gravity="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/front_car">
+
+                <ImageView
+                    image_local="@{pay_vm.imageRes, default=@drawable/car_air}"
+                    android:layout_width="@dimen/_200sdp"
+                    android:layout_height="@dimen/_150sdp"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerInside"
+                    tools:src="@drawable/mercedez" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/etIdCarPay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:fontFamily="@font/nova_semibold"
+                android:hint="Ingrese el número de la placa"
+                android:imeOptions="actionDone"
+                android:paddingBottom="@dimen/_15sdp"
+                android:text="@={pay_vm.textCarId}"
+                android:visibility="gone"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorWhite"
+                android:textSize="@dimen/_15sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/colorMetalBlack"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline3"
+            app:layout_constraintVertical_bias="0.0">
+
+            <TextView
+                android:id="@+id/textCalcula"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:fontFamily="@font/nova_semibold"
+                android:text="Calcular pago"
+                android:onClick="@{()-> pay_vm.checkPay()}"
+                android:visibility="gone"
+                android:textColor="@color/colorYellow"
+                android:textSize="@dimen/_15sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@color/colorWhite"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toTopOf="@+id/btnPayParking"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:id="@+id/lytHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="30"
+                        android:fontFamily="@font/nova_semibold"
+                        android:gravity="center"
+                        android:text="@string/text_num_place"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/_10sdp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="39"
+                        android:fontFamily="@font/nova_semibold"
+                        android:gravity="center"
+                        android:text="@string/text_time_table"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/_10sdp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="30"
+                        android:fontFamily="@font/nova_semibold"
+                        android:gravity="center"
+                        android:text="@string/text_cant_bill"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/_10sdp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorLine"
+                    android:orientation="horizontal"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/lytPayment"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_30sdp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txtDate"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="30"
+                        android:fontFamily="@font/nova_semibold"
+                        android:gravity="center"
+                        android:text="@{pay_vm.textCarId}"
+                        android:textColor="@color/colorMetalBlack"
+                        android:textSize="@dimen/_9sdp"
+                        tools:text="14/02/18" />
+
+                    <TextView
+                        android:id="@+id/txtType"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="39"
+                        android:fontFamily="@font/nova_semibold"
+                        android:gravity="center"
+                        android:text="@{pay_vm.textTime}"
+                        android:textColor="@color/colorMetalBlack"
+                        android:textSize="@dimen/_9sdp"
+                        tools:text="25" />
+
+                    <TextView
+                        android:id="@+id/txtAmount"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="30"
+                        android:fontFamily="@font/nova_semibold"
+                        android:gravity="center"
+                        android:text="@{pay_vm.textBill}"
+                        android:textColor="@color/colorMetalBlack"
+                        android:textSize="@dimen/_9sdp"
+                        tools:text="#52" />
+                </LinearLayout>
+            </LinearLayout>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnPayParking"
+                style="@style/DefaultButtonPrimary"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_buttom"
+                android:layout_marginStart="@dimen/_35sdp"
+                android:layout_marginEnd="@dimen/_35sdp"
+                android:layout_marginBottom="32dp"
+                android:fontFamily="@font/roboto_bold"
+                android:padding="@dimen/_2sdp"
+                android:text="@string/text_pay_bill"
+                android:textAllCaps="false"
+                android:onClick="@{()-> pay_vm.payBill()}"
+                android:textSize="@dimen/_15sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:scaleType="centerInside"
+            android:tint="@color/colorYellow"
+            android:onClick="@{()-> pay_vm.Gotoback()}"
+            app:layout_constraintBottom_toTopOf="@+id/guideline2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline2"
+            app:srcCompat="@drawable/ic_arrow_back" />
+
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5" />
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

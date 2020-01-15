@@ -1,0 +1,21 @@
+{
+  "options":
+  [
+    {
+      "id": "mn01",
+      "name": "Ingreso"
+    },
+    {
+      "id": "mn02",
+      "name": "Registro"
+    },
+    {
+      "id": "mn03",
+      "name": "Salida"
+    },
+    {
+      "id": "mn04",
+      "name": "Pagos"
+    }
+  ]
+}

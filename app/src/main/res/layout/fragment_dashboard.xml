@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="ds_vm"
+            type="com.prueba.hugo.views.home.dashboard.DashBoardViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/masterLossPass"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.08" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/btn1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/colorYellow"
+            app:layout_constraintBottom_toTopOf="@+id/guideline3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/front_car">
+
+                <ImageView
+                    image_local="@{ds_vm.imageRes, default=@drawable/mercedez}"
+                    android:layout_width="@dimen/_200sdp"
+                    android:layout_height="@dimen/_200sdp"
+                    android:adjustViewBounds="true"
+                    android:paddingEnd="@dimen/_100sdp"
+                    android:scaleType="centerCrop"
+                    tools:src="@drawable/mercedez" />
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/btn2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/colorMetalBlack"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline3">
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcMenu"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="16dp"
+                android:paddingStart="@dimen/_10sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:listitem="@layout/item_card_home" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.4" />
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
