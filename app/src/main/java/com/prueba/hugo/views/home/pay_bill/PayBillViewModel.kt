@@ -11,8 +11,7 @@ import com.prueba.hugo.tools.Cons
 import com.prueba.hugo.tools.ConvertAmount
 import com.prueba.hugo.tools.SingleLiveEvent
 import io.realm.RealmResults
-import java.util.*
-import java.util.concurrent.TimeUnit
+import kotlin.math.floor
 
 
 /* Created by
@@ -92,26 +91,16 @@ fun payBill(){
 
         }
 
-    fun GetDifference(start: Long, end: Long): Int {
-        val cal = Calendar.getInstance()
-        cal.timeInMillis = start
-        val hour = cal[Calendar.HOUR_OF_DAY]
-        val min = cal[Calendar.MINUTE]
-        var t = (23 - hour) * 3600000 + (59 - min) * 60000.toLong()
-        t = start + t
-        var diff = 0
-        if (end > t) {
-            diff = ((end - t) / TimeUnit.DAYS.toMillis(1)).toInt() + 1
-        }
-        return diff
-    }
+
+
 
     fun checkUsaerData(id:String){
         textCarId.postValue(id)
         val data =   repository.getDataCarsId(id)
         if(data.isNotEmpty()){
 
-            var timeInminutes = GetDifference(data[0]!!.time_start!!,data[0]!!.time_end!!)
+            val minutes = Math.abs(data[0]!!.time_end!! - data[0]!!.time_start!!)
+            var timeInminutes = floor((minutes.toDouble()/1000)/60).toInt()
 
             var bill = 0.00
             var timeTotal = 0
@@ -150,5 +139,6 @@ fun payBill(){
             textError.postValue(App.context.getString(R.string.text_error_plate))
         }
     }
+    
 
 }
