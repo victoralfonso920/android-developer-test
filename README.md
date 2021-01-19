@@ -1,41 +1,40 @@
 # android-developer-test
-proyecto de prueba con arquitectura MVVM y DataBinding
+proyecto de prueba con patron MVVM y DataBinding
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
-android-developer-test es un proyecto de informacion y pruebas a partir de la solucion a una administracion de parqueos no automatizados.
+
+android-developer-test is an information and test project based on the solution to a non-automated parking management.
 
 
 
-# Que puedo encontrar!
+# What can I find!
 
-  - Herramienta de administracion de parqueos
-  - creacion de usuarios y control de tiempos
+  - Parking management tool
+  - user creation and time control
+
+How can I use this project:
+  - Import project or download it via zip or Git Client
+  - Open project with Android Studio and check gradle to version 3.3+
+  - Verify updated Android SDK AndroidX is already used throughout the project
+
+The project uses the MVVM + Repository design pattern, so prior knowledge of the pattern is recommended to understand the complexity of the development, in addition to the use of Koin as a dependency injector.
 
 
-Como puedo usar este proyecto:
-  - Importar proyecto o descargarlo via zip o Cliente Git
-  - Abrir proyecto con Android Studio y verificar gradle a version 3.3 +
-  - Verificar SDK de Android actualizado ya se utiliza AndroidX en todo el proyecto
+### Libraries
 
-El proyecto usa patron de diseño MVVM + Repositorio por lo que se recomienda conocimiento previo del patron para comprender la complejidad del desarrollo, ademas del uso de Koin como inyector de dependencias.
+android-developer-test makes use of libraries to facilitate development, these are some of the libraries used
 
-
-### Librerias
-
-android-developer-test hace uso de librerias para facilitar el desarrollo, estas son algunas de las librerias usadas
-
-* [Glide] - Cargador de Imagenes!
-* [Koin] - Libreria que permite inyeccion de dependencias
-* [Lifecycle] - Frameworks para manejo de los estado de vida de la aplicacion
-* [Coroutines] - Frameworks para el uso de peticiones y uso debido de recursos en 2 plano
-* [Gson] - Libreria de serializado de modelos json
-* [Realm] - Libreria de persistencia de datois NoSQL
-
+* [Glide] - Image Uploader!
+* [Koin] - Library that allows dependency injection
+* [Lifecycle] - Frameworks for managing the application life status
+* [Coroutines] - Frameworks for the use of requests and due use of resources in 2 plane
+* [Gson] - Json model serialization library
+* [Realm] - NoSQL data persistence library
 
 
 
-android-developer-test requires SDK Android actualizado, Gradle 3.5.3 o superior y Android Studio 3.5.2.
 
+android-developer-test requires updated Android SDK, Gradle 3.5.3 or higher, and Android Studio 3.5.2.
 
 
